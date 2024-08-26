@@ -2,6 +2,8 @@ import { Routes, Route, Navigate } from 'react-router-dom'
 import MasterLayout from '../layout/MasterLayout'
 import Example from '../app/Example'
 import Home from './../app/Home';
+import ExampleUploadPhotoCapture from '../app/Example-upload-photo';
+import ToggleButton from '../app/test';
 export default function PrivateRoutes() {
     return (
         <Routes>
@@ -9,6 +11,7 @@ export default function PrivateRoutes() {
                 {/* Redirect to Dashboard after success login/registartion */}
                 <Route path='auth/*' element={<Navigate to='/home' />} />
                 <Route path='home' element={<Home />} />
+                <Route path='test' element={<ToggleButton />} />
                 {/* Pages */}
                 {/* <Route path='dashboard' element={<DashboardWrapper />} />
                     <Route path='builder' element={<BuilderPageWrapper />} />
@@ -20,7 +23,12 @@ export default function PrivateRoutes() {
                        <Example/>
                     }
                 />
-
+                <Route
+                    path="apps/upload/*"
+                    element={
+                       <ExampleUploadPhotoCapture/>
+                    }
+                />
                 <Route path='*' element={<Navigate to='/error/404' />} />
             </Route>
         </Routes>

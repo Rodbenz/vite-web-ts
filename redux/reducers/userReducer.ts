@@ -34,17 +34,12 @@ export function userRoleMenu(state = initialStateMenu, action: any) {
       return state;
   }
 }
-const initialStateFunc = {
-  user_func: null,
-};
+const initialStateFunc = null
 
 export function userRoleFunc(state = initialStateFunc, action: any) {
   switch (action.type) {
     case ADD_CUR_USER_ROLE_FUNC:
-      return {
-        user_func: action.payload,
-      };
-
+      return action.payload;
     default:
       return state;
   }

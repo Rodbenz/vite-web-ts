@@ -13,10 +13,11 @@ import { useDispatch } from "react-redux";
 import { createTheme, ThemeProvider } from "@mui/material/styles";
 import {
   addCurrentUser,
+  addUserRoleMenuFunc,
   addUserRoleMenu,
 } from "../../redux/actions/userAction";
 import {
-  endEndLoadScreen,
+  EndLoadScreen,
   startLoadScreen,
 } from "../../redux/actions/loadingScreenAction";
 import { login_auth_emp_get } from "../service/login";
@@ -68,21 +69,22 @@ export default function Login() {
         if (reponse && reponse.status == "Success") {
           dispatch(addCurrentUser(reponse?.data?.auth_role_profile[0]));
           dispatch(addUserRoleMenu(reponse?.data?.auth_role_menu));
+          dispatch(addUserRoleMenuFunc(reponse?.data?.auth_role_menu_func));
           const lsValue = JSON.stringify(reponse);
           localStorage.setItem(
             import.meta.env.VITE_APP_AUTH_LOCAL_STORAGE_KEY,
             lsValue
           );
-          dispatch(endEndLoadScreen());
+          dispatch(EndLoadScreen());
         }
         if (reponse && reponse.status == "Error") {
           console.log(reponse);
-          dispatch(endEndLoadScreen());
+          dispatch(EndLoadScreen());
           await setErrorMessage(reponse?.error_message);
         }
       }, 4000);
     } catch (e) {
-      dispatch(endEndLoadScreen());
+      dispatch(EndLoadScreen());
       console.log(e);
     }
   };

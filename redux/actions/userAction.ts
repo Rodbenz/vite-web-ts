@@ -14,7 +14,7 @@ export function addUserRoleMenu(add: any) {
     payload: add,
   };
 }
-export function addUserRoleFunc(add: any) {
+export function addUserRoleMenuFunc(add: any) {
   return {
     type: ADD_CUR_USER_ROLE_FUNC,
     payload: add,
