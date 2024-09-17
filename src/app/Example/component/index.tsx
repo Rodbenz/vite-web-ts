@@ -4,6 +4,7 @@ import DataTable from '../../../components/MUI/DataTables';
 import BasicDateTimePicker from '../../../components/MUI/DesktopDatePicker';
 import ActionManageCell from '../../../components/MUI/ActionManageCell';
 import AutoCompleteAll from '../../../components/MUI/AutoCompleteAll';
+import MenuListComposition from '../../../components/MUI/MenuListComposition';
 
 export default function ComponenExample() {
     const headCells = [
@@ -54,13 +55,13 @@ export default function ComponenExample() {
 
     const rows = [
         {
-            ACTION: (<ActionManageCell element={{ name: 'Cupcake', calories: 305, fat: 3.7, carbs: 67, protein: 4.3 }} />), name: 'Cupcake', calories: 305, fat: 3.7, carbs: 67, protein: 4.3
+            ACTION: (<MenuListComposition />), name: 'Cupcake', calories: 305, fat: 3.7, carbs: 67, protein: 4.3
         },
         {
-            ACTION: (<ActionManageCell element={{ name: 'koy', calories: 305, fat: 3.7, carbs: 67, protein: 4.3 }} />), name: 'koy', calories: 305, fat: 3.7, carbs: 67, protein: 4.3
+            ACTION: (<MenuListComposition />), name: 'koy', calories: 305, fat: 3.7, carbs: 67, protein: 4.3
         },
         {
-            ACTION: (<ActionManageCell element={{ name: 'kuy', calories: 305, fat: 3.7, carbs: 67, protein: 4.3 }} />), name: 'kuy', calories: 305, fat: 3.7, carbs: 67, protein: 4.3
+            ACTION: (<MenuListComposition />), name: 'kuy', calories: 305, fat: 3.7, carbs: 67, protein: 4.3
         },
 
     ];
