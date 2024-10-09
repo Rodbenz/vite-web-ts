@@ -4,6 +4,7 @@ import Example from '../app/Example'
 import Home from './../app/Home';
 import ExampleUploadPhotoCapture from '../app/Example-upload-photo';
 import ToggleButton from '../app/test';
+import About from '../app/About';
 export default function PrivateRoutes() {
     return (
         <Routes>
@@ -12,6 +13,7 @@ export default function PrivateRoutes() {
                 <Route path='auth/*' element={<Navigate to='/home' />} />
                 <Route path='home' element={<Home />} />
                 <Route path='test' element={<ToggleButton />} />
+                <Route path='about' element={<About/>} />
                 {/* Pages */}
                 {/* <Route path='dashboard' element={<DashboardWrapper />} />
                     <Route path='builder' element={<BuilderPageWrapper />} />
